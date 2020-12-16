@@ -8,7 +8,8 @@ class Router {
         
     }
 
-    public static function test(){
+    public static function test()
+    {
 
     }
 
