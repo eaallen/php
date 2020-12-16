@@ -1,5 +1,6 @@
 {
-    "name": "elijah/core",
+    "name": "elijah/own_mvc",
+    "description": "mvc project",
     "authors": [
         {
             "name": "eaallen",
@@ -7,10 +8,9 @@
         }
     ],
     "autoload": {
-        "psr-4": {
-            "app\\":"./"
-        }
+      "psr-4": {
+          "app\\":"./"
+      }  
     },
-    "require": {},
-    "description": ""
+    "require": {}
 }

@@ -1,9 +1,9 @@
 <?php
 
-// namespace app\core;
+namespace app\core;
 /**
  * class Router
- * @author ELijah Allen
+ * @author elijah
  * @package app\core 
  */
 
@@ -16,9 +16,14 @@ class Application{
         # code...
     }
 
+    public function run()
+    {
+        $this->router->resolve()
+    }
+
     public function setConfig($config)
     {
-        # code...
+        # code..
     }
 
     public function setRouter($router)

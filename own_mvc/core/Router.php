@@ -1,9 +1,17 @@
 <?php
 
 // class for routing 
-// namespace app\core;
+namespace app\core;
+/**
+ * class Router
+ * @author elijah
+ * @package app\core 
+ */
 
 class Router {
+    protected array $routes = [];
+
+
     public function __construct()
     {
         
@@ -14,11 +22,14 @@ class Router {
 
     }
 
-    public function get($address)
+    public function get($path,$callback)
     {
-        $uri = $this->httpsOrHttp();
-        header('Location: '.$uri."$address/");
-        exit;
+       $this->routes['get'][$path] = $callback;
+    }
+    
+    public function post($path,$callback)
+    {
+       $this->routes['post'][$path] = $callback;
     }
 
     private function httpsOrHttp()

@@ -29,19 +29,19 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '7544cd20b98c329b83bb7aabf5c160dbfbf49ae4',
-    'name' => 'elijah/core',
+    'reference' => 'e501931d048f3f54d7089532b74cf2ca956a6b70',
+    'name' => 'elijah/own_mvc',
   ),
   'versions' => 
   array (
-    'elijah/core' => 
+    'elijah/own_mvc' => 
     array (
       'pretty_version' => 'dev-master',
       'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => '7544cd20b98c329b83bb7aabf5c160dbfbf49ae4',
+      'reference' => 'e501931d048f3f54d7089532b74cf2ca956a6b70',
     ),
   ),
 );
