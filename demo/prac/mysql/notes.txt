@@ -1,0 +1,1 @@
+db.php holds the connection to the database sql_con
