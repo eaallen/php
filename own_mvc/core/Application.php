@@ -2,7 +2,7 @@
 
 namespace app\core;
 /**
- * class Router
+ * 
  * @author elijah
  * @package app\core 
  */
@@ -10,15 +10,18 @@ namespace app\core;
 
 class Application{
     public Router $router;
-    function __contruct()
+    public Request $request;
+    public function __construct()
     {
-        $this->router = new Router();
-        # code...
+        $this->request = new Request();
+        $this->router = new Router($this->request);
     }
+
 
     public function run()
     {
-        $this->router->resolve()
+        $this->router->resolve();
+        exit;
     }
 
     public function setConfig($config)
