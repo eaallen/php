@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+// namespace app\core;
 /**
  * class Router
  * @author ELijah Allen
@@ -8,10 +8,11 @@ namespace app\core;
  */
 
 
-class Aplication{
+class Application{
     public Router $router;
     function __contruct()
     {
+        $this->router = new Router();
         # code...
     }
 
