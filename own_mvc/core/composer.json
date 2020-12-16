@@ -1,0 +1,15 @@
+{
+    "name": "elijah/core",
+    "authors": [
+        {
+            "name": "eaallen",
+            "email": "elijah.a.allen@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\":"./"
+        }
+    },
+    "require": {}
+}
