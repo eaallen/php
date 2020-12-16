@@ -15,7 +15,7 @@ class Router {
     public function get($address)
     {
         $uri = $this->httpsOrHttp();
-        header('Location: '.$uri."$address");
+        header('Location: '.$uri."$address/");
         exit;
     }
 
