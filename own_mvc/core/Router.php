@@ -44,7 +44,8 @@ class Router {
             exit;
         }
         echo call_user_func($callback);
-        var_dump($method);
+        echo "<br>method<br>";
+        var_dump($path);
     }
 
 
