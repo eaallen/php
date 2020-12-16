@@ -1,6 +1,7 @@
 <?php
 
 // class for routing 
+namespace app\core;
 
 class Router {
     public function __construct()
