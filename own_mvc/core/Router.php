@@ -43,15 +43,39 @@ class Router {
             echo "Not Found :(";
             exit;
         }
+
+        if(is_string($callback)){
+            return $this->renderView($callback);
+        }
+
         echo call_user_func($callback);
-        echo "<br>method<br>";
-        var_dump($path);
         // echo "<pre>";
         // var_dump($_SERVER);
         // echo "</pre>";
     }
 
+    public function renderView($view)
+    {
+        $layout_content = $this->layoutContent();
+        $view_content = $this->renderOnlyView($view);
+        // echo "$view_content";
+        return str_replace('{{content}}',$view_content,$layout_content);
+        // return str_replace('{{content}}',$view_content,$layout_content);
+    }
+    
+    protected function layoutContent()
+    {
+        ob_start();
+        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        return ob_get_clean();
+    }
 
+    protected function renderOnlyView($view)
+    {
+        ob_start();
+        include_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean();
+    }
 
     private function httpsOrHttp()
     {

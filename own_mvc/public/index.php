@@ -4,15 +4,12 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-// use ;
-$app = new app\core\Application();
+// use                           pass in the root directory
+$app = new app\core\Application(dirname(__DIR__));
 
-$app->router->get('/',function(){
-    return 'hello world';
-});
+$app->router->get('/','home');
 
-$app->router->get('/contact',function(){
-    return 'CONTACT';
-});
+$app->router->get('/contact','contact');
+$app->router->get('/test','test');
 
 $app->run();

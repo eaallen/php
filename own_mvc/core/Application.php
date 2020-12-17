@@ -9,10 +9,12 @@ namespace app\core;
 
 
 class Application{
+    public static string $ROOT_DIR;
     public Router $router;
     public Request $request;
-    public function __construct()
+    public function __construct($root_dir)
     {
+        self::$ROOT_DIR = $root_dir;
         $this->request = new Request();
         $this->router = new Router($this->request);
     }
@@ -20,7 +22,8 @@ class Application{
 
     public function run()
     {
-        $this->router->resolve();
+        // print the resposne from resolve!
+        echo $this->router->resolve();
         exit;
     }
 
