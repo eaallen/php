@@ -46,6 +46,9 @@ class Router {
         echo call_user_func($callback);
         echo "<br>method<br>";
         var_dump($path);
+        // echo "<pre>";
+        // var_dump($_SERVER);
+        // echo "</pre>";
     }
 
 
