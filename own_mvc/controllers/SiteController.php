@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\core\Application;
+use app\core\Request;
+use Controller;
 
 /**
  * @author Elijah Allen
@@ -10,8 +12,9 @@ use app\core\Application;
  * 
  */
 
-class SiteController
+class SiteController extends Controller
 {
+
     public function home()
     {
         $params = [
@@ -21,10 +24,12 @@ class SiteController
     }
     public function contact()
     {
-        return Application::$app->router->renderView('contact');
+        return $this->render('contact');
     }
-    public function handleContact()
+    public function handleContact(Request $request)
     {
+        $body = Application::$app->request->getBody();
+        var_dump($body);
         return 'Hanldeing data';
     }
 }

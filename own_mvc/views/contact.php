@@ -7,15 +7,15 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                    <input type="text" name="txtSubject" class="form-control" placeholder="Subject" value="" />
                 </div>
                 <br>
                 <div class="form-group">
-                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                    <input type="text" name="txtName" class="form-control" placeholder="Your Name" value="" />
                 </div>
                 <br>
                 <div class="form-group">
-                    <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email" value="" />
                 </div>
                 <br>
                 <div class="form-group">

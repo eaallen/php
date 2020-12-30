@@ -54,7 +54,7 @@ class Router {
             return $this->renderView($callback);
         }
 
-        echo call_user_func($callback);
+        echo call_user_func($callback, $this->request);
         // echo "<pre>";
         // var_dump($_SERVER);
         // echo "</pre>";
