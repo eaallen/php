@@ -2,7 +2,7 @@
     <div class="contact-image">
         <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
     </div>
-    <form method="post">
+    <form method="post" action="">
         <h3>Drop Us a Message</h3>
         <div class="row">
             <div class="col-md-6">

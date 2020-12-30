@@ -47,7 +47,7 @@ class Router {
         $callback = $this->routes[$method][$path] ?? false;  
         if($callback===false){
             $this->response->setStatusCode(404);
-            return "Not Found :(";
+            return $this->renderView("404");
         }
 
         if(is_string($callback)){
@@ -64,6 +64,14 @@ class Router {
     {
         $layout_content = $this->layoutContent();
         $view_content = $this->renderOnlyView($view, $params);
+        // echo "$view_content";
+        return str_replace('{{content}}',$view_content,$layout_content);
+        // return str_replace('{{content}}',$view_content,$layout_content);
+    }
+    public function renderContent($view_content, array $params=[])
+    {
+        $layout_content = $this->layoutContent();
+        // $view_content = $this->renderOnlyView($view, $params);
         // echo "$view_content";
         return str_replace('{{content}}',$view_content,$layout_content);
         // return str_replace('{{content}}',$view_content,$layout_content);
