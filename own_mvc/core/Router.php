@@ -11,11 +11,17 @@ namespace app\core;
 class Router {
     public Request $request;
     protected array $routes = [];
+    public Response $response;
 
-
-    public function __construct(Request $request)
+    /**
+     * Router Contsructor
+     * @param \app\core\Request $request
+     * @param \app\core\Response $response
+     */
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
     }
 
     public static function test()
@@ -40,7 +46,7 @@ class Router {
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;  
         if($callback===false){
-            Application::$app->response->setStatusCode(404);
+            $this->response->setStatusCode(404);
             return "Not Found :(";
         }
 
