@@ -56,10 +56,10 @@ if (isset($_POST['submit'])) {
         <div class="container">
             <label for="uname"><b>Username</b></label>
             <!-- make sure name prop is the column name in table -->
-            <input type="text" placeholder="Enter Username" name="uname" required value='admin'>
+            <input type="text" placeholder="Enter Username" name="uname" required value=''>
 
             <label for="psw"><b>Password</b></label>
-            <input type="text" placeholder="Enter Password" name="psw" required value="letmein">
+            <input type="text" placeholder="Enter Password" name="psw" required value="">
 
             <button type="submit" name="submit">Login</button>
             <!-- <label>
