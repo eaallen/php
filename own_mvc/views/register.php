@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" name="user_name" class="form-control" placeholder="User name" value="" />
+                    <input type="text" name="username" class="form-control" placeholder="Username" value="" />
                 </div>
                 <br>
                 <div class="form-group">
