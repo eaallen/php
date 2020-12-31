@@ -17,6 +17,7 @@ class Application{
     public Request $request;
     public static Application $app;
     public Response $response;
+    public Controller $controller;
     public function __construct($root_dir)
     {
         self::$ROOT_DIR = $root_dir;
@@ -27,7 +28,7 @@ class Application{
     }
 
 
-    public function run()
+    public function run():void
     {
         // print the Response from resolve!
         echo $this->router->resolve();
@@ -42,5 +43,15 @@ class Application{
     public function setRouter($router)
     {
         # code...
+    }
+
+    public function getController():Controller
+    {
+        return $this->controller;
+    }
+
+    public function setController(\app\core\Controller $controller):void
+    {
+        $this->controller = $controller;
     }
 }
