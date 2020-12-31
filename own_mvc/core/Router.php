@@ -56,6 +56,7 @@ class Router {
 
         if(is_array($callback)){
             Application::$app->controller= new $callback[0]();
+            $callback[0] = Application::$app->controller;
         }
 
         echo call_user_func($callback, $this->request);
@@ -64,28 +65,27 @@ class Router {
         // echo "</pre>";
     }
 
-    public function renderView($view, array $params=[])
+    public function renderView($view, array $params=[]):string
     {
         $layout_content = $this->layoutContent();
         $view_content = $this->renderOnlyView($view, $params);
-        // echo "$view_content";
         return str_replace('{{content}}',$view_content,$layout_content);
-        // return str_replace('{{content}}',$view_content,$layout_content);
     }
-    public function renderContent($view_content, array $params=[])
+    public function renderContent($view_content):string
     {
         $layout_content = $this->layoutContent();
-        // $view_content = $this->renderOnlyView($view, $params);
-        // echo "$view_content";
         return str_replace('{{content}}',$view_content,$layout_content);
-        // return str_replace('{{content}}',$view_content,$layout_content);
     }
     
-    protected function layoutContent()
+    /**
+     * LayoutContent Method
+     * returns the layout associated with a spesific view
+     */
+    protected function layoutContent():string
     {
         $layout_content = Application::$app->controller->layout;
         ob_start();
-        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        include_once Application::$ROOT_DIR."/views/layouts/$layout_content.php";
         return ob_get_clean();
     }
 

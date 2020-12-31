@@ -29,12 +29,16 @@ class Request{
     {
         return $this->getMethod() === 'get';
     }
-    
+
     public function isPost()
     {
         return $this->getMethod() === 'post';
     }
 
+    /**
+     * Method getBody
+     * returns data from get or post request
+     */
     public function getBody():array
     {
         var_dump($this->getMethod());

@@ -18,6 +18,6 @@ class Controller
 
     public function setLayout(string $layout)
     {
-            
+        $this->layout = $layout;
     }
 }
